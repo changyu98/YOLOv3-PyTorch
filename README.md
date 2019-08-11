@@ -3,23 +3,31 @@ A minimal PyTorch implementation of YOLOv3, with support for training, inference
 
 ## Installation
 ##### Clone and install requirements
-    $ git clone https://github.com/eriklindernoren/PyTorch-YOLOv3
-    $ cd PyTorch-YOLOv3/
-    $ sudo pip3 install -r requirements.txt
+```text
+git clone https://github.com/lornatang/PyTorch-yolov3
+cd PyTorch-yolov3/
+pip3 install -r requirements.txt
+```
 
 ##### Download pretrained weights
-    $ cd weights/
-    $ bash download_weights.sh
+Here you can download the weights we have trained.
+```text
+cd weights/
+bash download_weights.sh
+```
 
 ##### Download COCO
-    $ cd data/
-    $ bash get_coco_dataset.sh
+If you want to train the data, you can execute the following scripts to download from the original author's data site.
+```text
+cd data/
+bash get_coco_dataset.sh
+```
     
 ## Test
 Evaluates the model on COCO test.
-
-    $ python3 test.py --weights_path weights/yolov3.weights
-
+```text
+python3 test.py --weights_path weights/yolov3.weights
+```
 | Model                   | mAP (min. 50 IoU) |
 | ----------------------- |:-----------------:|
 | YOLOv3 608 (paper)      | 57.9              |
@@ -36,13 +44,14 @@ Uses pretrained weights to make predictions on images. Below table displays the 
 | ResNet-152              | Titan X  | 37       |
 | Darknet-53 (paper)      | Titan X  | 76       |
 | Darknet-53 (this impl.) | 1080ti   | 74       |
+```text
+python3 detect.py --image_folder data/samples/
+```
 
-    $ python3 detect.py --image_folder data/samples/
-
-<p align="center"><img src="assets/giraffe.png" width="480"\></p>
-<p align="center"><img src="assets/dog.png" width="480"\></p>
-<p align="center"><img src="assets/traffic.png" width="480"\></p>
-<p align="center"><img src="assets/messi.png" width="480"\></p>
+<p align="center"><img src="assets/giraffe.png" width="376" alt=""></p>
+<p align="center"><img src="assets/dog.png" width="499" alt=""></p>
+<p align="center"><img src="assets/traffic.png" width="462" alt=""></p>
+<p align="center"><img src="assets/messi.png" width="513" alt=""></p>
 
 ## Train
 ```
@@ -92,10 +101,10 @@ Total Loss 4.429395
 Track training progress in Tensorboard:
 * Initialize training
 * Run the command below
-* Go to http://localhost:6006/
+* Go to http://localhost:9999/
 
 ```
-$ tensorboard --logdir='logs' --port=6006
+$ tensorboard --logdir='logs' --port=9999
 ```
 
 ## Train on Custom Dataset
