@@ -102,3 +102,14 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# IDE file
+.idea
+.vscode
+
+# model weights
+weights
+
+# data
+data/coco
+.DS_Store
