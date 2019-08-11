@@ -111,5 +111,7 @@ venv.bak/
 weights
 
 # data
-data/coco
+data/coco/
+
+# mac file
 .DS_Store
